@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio - Responsive Personal Website</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo" tabindex="0">MyPortfolio</div>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+        <ul id="nav-menu">
+          <li><a href="#welcome" tabindex="0">Welcome</a></li>
+          <li><a href="#about" tabindex="0">About Me</a></li>
+          <li><a href="#achievements" tabindex="0">Achievements</a></li>
+          <li><a href="#goals" tabindex="0">Future Goals</a></li>
+          <li><a href="#personal" tabindex="0">Personal Side</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="welcome" tabindex="0" aria-label="Welcome Section">
+      <h2>Welcome</h2>
+      <div class="welcome-content">
+        <div class="welcome-media">
+          <img src="img.jpg" alt="Portrait photo of me" />
+         
+        </div>
+        <div class="welcome-text">
+          <p>Welcome to my personal portfolio website! I'm excited to share a bit about myself, my achievements, and my aspirations with you. Feel free to explore and learn more about who I am and what drives me.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" tabindex="0" aria-label="About Me Section">
+      <h2>About Me</h2>
+      <p><strong>Name:</strong> SHARMA NILESH MANISHKUMAR</p>
+      <p><strong>Location:</strong> VIRAR,MAHARASHTRA,INDIA</p>
+      <p><strong>Education:</strong> B.E in COMPUTER ENGINEERING</p>
+      <p><strong>Languages Known:</strong></p>
+      <ul class="custom-list" aria-label="Languages known">
+        <li>ENGLISH</li>
+        <li>HINDI</li>
+        <li>MARATHI</li>
+      </ul>
+    </section>
+
+    <section id="achievements" tabindex="0" aria-label="Achievements Section">
+      <h2>Achievements</h2>
+      <ul class="custom-list" aria-label="List of achievements">
+        <li>I have built a strong foundation in programming by learning and working with multiple languages including C, C++, Java, and Python. I’ve practiced Data Structures and Algorithms extensively using Java, solving problems on platforms like LeetCode and HackerRank. I also explored core computer science subjects like Operating Systems to deepen my understanding of how systems work under the hood. These experiences have sharpened both my problem-solving and coding skills.
+</li>
+      </ul>
+    </section>
+
+    <section id="goals" tabindex="0" aria-label="Future Goals Section">
+      <h2>Future Goals</h2>
+      <p>My aim is to become a software architect and lead innovative projects that positively impact people's lives. I seek to contribute to open source communities and mentor upcoming developers to foster growth and inclusivity in tech.</p>
+    </section>
+
+    <section id="personal" tabindex="0" aria-label="Personal Side Section">
+      <h2>Personal Side</h2>
+      <p><strong>Hobbies:</strong> I love hiking, photography, and reading science fiction. These hobbies inspire creativity and mindfulness in my everyday life.</p>
+
+      <p><strong>Favourite Role Models:</strong></p>
+      <ul class="custom-list" aria-label="Favourite role models and reasons">
+        <li>Ada Lovelace – Pioneer in computing and an inspiration for women in STEM</li>
+        <li>Elon Musk – For his innovative leadership and vision for the future</li>
+      </ul>
+
+      <p><strong>Favourite Books, Websites, and Startups:</strong></p>
+      <ul class="custom-list" aria-label="Favourite books">
+        <li><strong>Books:</strong> "Clean Code" by Robert C. Martin, "The Pragmatic Programmer" by Andrew Hunt & David Thomas</li>
+        <li><strong>Websites:</strong> MDN Web Docs for learning web development, Hacker News for tech trends</li>
+        <li><strong>Startups:</strong> Notion – for productivity innovation; GitHub – for open source collaboration</li>
+      </ul>
+
+      <p><strong>Volunteering Experience:</strong> I have participated as a mentor in code clubs and contributed to non-profit tech projects focused on education and digital accessibility.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 Jane Doe &nbsp;|&nbsp; <a href="mailto:jane.doe@example.com">jane.doe@example.com</a> &nbsp;|&nbsp; <a href="https://github.com/janedoe" target="_blank" rel="noopener">GitHub</a>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      navMenu.classList.toggle('show-menu');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if(navMenu.classList.contains('show-menu')){
+          navMenu.classList.remove('show-menu');
+          menuToggle.setAttribute('aria-expanded', false);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
